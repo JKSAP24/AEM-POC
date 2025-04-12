@@ -1,12 +1,18 @@
 {
     "project": "SAP",
     "plugins": [
-     {
+        {
         "id": "preview",
         "title": "Preview",
         "environments": ["edit"],
         "action": "($context) => { const url = new URL($context.preview.url); url.searchParams.set('foo', 'bar'); window.open(url.toString(), '_blank'); }"
-     },
+        },
+        {
+        "id": "custom-preview",
+        "title": "Preview (with param)",
+        "environments": ["edit"],
+        "url": "https://main--builder-prospect-prod--sapudex.aem.page{{pathname}}?foo=bar"
+        },
       {
         "id" : "bulk-status",
         "badgeVariant": "celery",
