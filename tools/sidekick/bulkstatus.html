@@ -86,13 +86,13 @@
       };
 
       function getSelectedFileNames() {
-        const url = window.parent.location.href;
-        console.log("Current URL:", url);
+        const resolvedUrl = document.referrer || window.location.href;
+        console.log("Resolved context URL:", resolvedUrl);
 
-        if (url.includes("drive.google.com")) {
+        if (resolvedUrl.includes("drive.google.com")) {
           console.log("Detected Google Drive");
-          const rows = document.querySelectorAll('[role="row"][aria-selected="true"]');
 
+          const rows = document.querySelectorAll('[role="row"][aria-selected="true"]');
           const fileNames = Array.from(rows).map(row => {
             const nameEl = row.querySelector('[data-tooltip]');
             const fallbackEl = row.querySelector('div[role="gridcell"] span[aria-label]');
@@ -104,7 +104,7 @@
           console.log('Google Drive - Selected File Names:', fileNames);
           return fileNames;
 
-        } else if (url.includes("sharepoint.com") || url.includes(".sharepoint.com") || url.includes("microsoft.com")) {
+        } else if (resolvedUrl.includes("sharepoint.com") || resolvedUrl.includes(".sharepoint.com") || resolvedUrl.includes("microsoft.com")) {
           console.log("Detected SharePoint");
 
           const selectedRows = document.querySelectorAll('.ms-DetailsRow.is-selected, div[aria-selected="true"]');
@@ -117,11 +117,10 @@
           return fileNames;
 
         } else {
-          console.log("Platform not supported");
+          console.log("Platform not supported for file selection.");
           return [];
         }
       }
-
 
    
 
