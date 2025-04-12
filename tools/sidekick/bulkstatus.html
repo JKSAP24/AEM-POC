@@ -102,7 +102,11 @@
             startPollingJobDetails(`${jobUrl}/details`);
           },
           error: function () {
-            $tbody.empty().append('<tr><td colspan="3">Failed to fetch the data.</td></tr>');
+            $tbody
+              .empty()
+              .append(
+                '<tr><td colspan="3">Failed to fetch the data.</td></tr>'
+              );
             $("#statusTable").show();
             console.error("Failed to trigger job");
           },
@@ -160,6 +164,7 @@
         resources.forEach((resource) => {
           const $row = $("<tr>");
 
+          // Filename with title
           const fileLink = $("<a>")
             .attr("href", resource.path)
             .attr("target", "_blank")
@@ -167,11 +172,31 @@
             .text(resource.sourceName || resource.path || "N/A");
 
           $("<td>").append(fileLink).appendTo($row);
+
+          // Preview Modified By with tooltip
           $("<td>")
             .text(resource.previewLastModifiedBy || "—")
+            .attr(
+              "title",
+              `previewLastModified: ${
+                resource.previewLastModified || "N/A"
+              }\npreviewSourceLastModified: ${
+                resource.previewSourceLastModified || "N/A"
+              }`
+            )
             .appendTo($row);
+
+          // Publish Modified By with tooltip
           $("<td>")
             .text(resource.publishLastModifiedBy || "—")
+            .attr(
+              "title",
+              `publishLastModified: ${
+                resource.publishLastModified || "N/A"
+              }\npublishSourceLastModified: ${
+                resource.publishSourceLastModified || "N/A"
+              }`
+            )
             .appendTo($row);
 
           $tbody.append($row);
