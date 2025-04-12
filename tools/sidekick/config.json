@@ -1,0 +1,48 @@
+{
+    "project": "SAP",
+    "plugins": [
+      {
+        "id": "tools",
+        "title": "Tools",
+        "isContainer": true,
+        "environments": [
+          "dev",
+          "preview",
+          "live"
+        ]
+      },
+      {
+        "containerId": "tools",
+        "title": "Preflight Checker",
+        "id": "preflight",
+        "environments": [
+          "dev",
+          "preview",
+          "live"
+        ],
+        "event": "preflight"
+      },
+      {
+        "title": "PROD",
+        "id": "env-badge",
+        "isBadge": true,
+        "badgeVariant": "celery",
+        "environments": [
+          "edit",
+          "dev",
+          "preview",
+          "live",
+          "prod"
+        ]
+      },
+      {
+        "id": "tools",
+        "containerId" : "bulk-status",
+        "title" : "Bulk status",
+        "environments" : [ "dev", "edit", "preview" ],
+        "url" : "/tools/sidekick/bulkstatus.html",
+        "isPalette" : true,
+        "paletteRect" : "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
+      }
+    ]
+  }
