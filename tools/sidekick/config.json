@@ -1,10 +1,9 @@
 {
   "project": "AEM-POC",
-  "passConfig": true,
   "plugins": [
     {
       "id": "bulk-status",
-      "badgeVariant": "celery",
+      "badgeVariant": "orange",
       "title": "Bulk status",
       "environments": ["any", "dev", "admin", "edit", "preview", "review"],
       "url": "/tools/sidekick/bulkstatus.html",
