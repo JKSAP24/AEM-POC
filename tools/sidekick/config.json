@@ -1,6 +1,12 @@
 {
     "project": "SAP",
     "plugins": [
+     {
+        "id": "preview",
+        "title": "Preview",
+        "environments": ["edit"],
+        "action": "($context) => { const url = new URL($context.preview.url); url.searchParams.set('foo', 'bar'); window.open(url.toString(), '_blank'); }"
+     },
       {
         "id" : "bulk-status",
         "badgeVariant": "celery",
@@ -10,9 +16,5 @@
         "isPalette" : true,
         "paletteRect" : "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
       }
-    ],
-    "previewHost": "main--aem-poc--jksap24.aem.page",
-    "liveHost": "main--aem-poc--jksap24.aem.live",
-    "urlPreview": "https://main--aem-poc--jksap24.aem.page?source=sidekick",
-    "urlLive": "https://main--aem-poc--jksap24.aem.page?source=sidekick"
+    ]
   }
