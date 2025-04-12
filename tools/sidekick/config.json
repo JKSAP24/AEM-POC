@@ -13,8 +13,8 @@
     }
   ],
   "additionalProperties": true,
-  "previewHost": "main--aem-poc--jksap24.hlx.page?source=sidekick",
-  "liveHost": "main--aem-poc--jksap24.hlx.live?source=sidekick",
-  "urlPreview": "main--aem-poc--jksap24.hlx.page?source=sidekick",
-  "urlLive": "main--aem-poc--jksap24.hlx.live?source=sidekick"
+  "previewHost": "main--aem-poc--jksap24.hlx.page#src=sd",
+  "liveHost": "main--aem-poc--jksap24.hlx.live#src=sd",
+  "urlPreview": "main--aem-poc--jksap24.hlx.page#src=sd",
+  "urlLive": "main--aem-poc--jksap24.hlx.live#src=sd"
 }
