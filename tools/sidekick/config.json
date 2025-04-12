@@ -6,7 +6,7 @@
       "id": "bulk-status",
       "badgeVariant": "celery",
       "title": "Bulk status",
-      "environments": ["any", "dev", "admin", "edit", "preview", "review", "live", "prod"],
+      "environments": ["any", "dev", "admin", "edit", "preview", "review"],
       "url": "/tools/sidekick/bulkstatus.html",
       "isPalette": true,
       "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
