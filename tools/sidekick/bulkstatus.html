@@ -86,7 +86,7 @@
       };
 
       function getSelectedFileNames() {
-        const url = window.location.href;
+        const url = window.parent.location.href;
         console.log("Current URL:", url);
 
         if (url.includes("drive.google.com")) {
