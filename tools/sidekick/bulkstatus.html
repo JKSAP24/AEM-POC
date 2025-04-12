@@ -86,31 +86,41 @@
       };
 
       function getSelectedFileNames() {
-        const url = window.location.href;
+          const url = window.location.href;
 
-        if (url.includes("drive.google.com")) {
-          // Google Drive logic
-          const selectedItems = document.querySelectorAll('[aria-selected="true"][role="row"]');
-          const fileNames = Array.from(selectedItems).map(item => {
-            const nameCell = item.querySelector('[data-tooltip]');
-            return nameCell?.getAttribute('data-tooltip') || 'Unnamed file';
-          });
-          console.log('Google Drive - Selected File Names:', fileNames);
-          return fileNames;
-        } else if (url.includes("sharepoint.com")) {
-          // SharePoint logic
-          const selectedRows = document.querySelectorAll('.is-selected[role="row"]');
-          const fileNames = Array.from(selectedRows).map(row => {
-            const nameCell = row.querySelector('[role="gridcell"]');
-            return nameCell?.textContent.trim() || 'Unnamed file';
-          });
-          console.log('SharePoint - Selected File Names:', fileNames);
-          return fileNames;
-        } else {
-          console.log("Unsupported platform");
-          return [];
+          if (url.includes("drive.google.com")) {
+            console.log("Detected Google Drive");
+            const rows = document.querySelectorAll('[role="row"][aria-selected="true"]');
+
+            const fileNames = Array.from(rows).map(row => {
+              const nameEl = row.querySelector('[data-tooltip]');
+              const fallbackEl = row.querySelector('div[role="gridcell"] span[aria-label]');
+              return nameEl?.getAttribute('data-tooltip') ||
+                    fallbackEl?.getAttribute('aria-label') ||
+                    'Unnamed file';
+            });
+
+            console.log('Google Drive - Selected File Names:', fileNames);
+            return fileNames;
+
+          } else if (url.includes("sharepoint.com")) {
+            console.log("Detected SharePoint");
+
+            const selectedRows = document.querySelectorAll('.ms-DetailsRow.is-selected');
+            const fileNames = Array.from(selectedRows).map(row => {
+              const cell = row.querySelector('.ms-DetailsRow-cell');
+              return cell?.textContent.trim() || 'Unnamed file';
+            });
+
+            console.log('SharePoint - Selected File Names:', fileNames);
+            return fileNames;
+
+          } else {
+            console.log("Platform not supported");
+            return [];
+          }
         }
-      }
+
    
 
       $("#fetchBtn").on("click", function () {
