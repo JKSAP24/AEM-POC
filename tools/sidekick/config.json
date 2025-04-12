@@ -12,32 +12,17 @@
         ]
       },
       {
-        "containerId": "tools",
-        "title": "Preflight Checker",
-        "id": "preflight",
-        "environments": [
-          "dev",
-          "preview",
-          "live"
-        ],
-        "event": "preflight"
-      },
-      {
-        "title": "PROD",
-        "id": "env-badge",
-        "isBadge": true,
-        "badgeVariant": "celery",
-        "environments": [
-          "edit",
-          "dev",
-          "preview",
-          "live",
-          "prod"
-        ]
+        "id": "preview",
+        "title": "Preview",
+        "environments": ["edit"],
+        "transform": {
+          "url": "($url) => `${$url}?foo=bar`"
+        }
       },
       {
         "id": "tools",
         "containerId" : "bulk-status",
+        "badgeVariant": "celery",
         "title" : "Bulk status",
         "environments" : [ "dev", "edit", "preview" ],
         "url" : "/tools/sidekick/bulkstatus.html",
