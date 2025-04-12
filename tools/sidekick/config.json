@@ -2,26 +2,15 @@
     "project": "SAP",
     "plugins": [
       {
-        "id": "tools",
-        "title": "Tools",
-        "isContainer": true,
-        "environments": [
-          "dev",
-          "preview",
-          "live"
-        ]
-      },
-      {
         "id": "preview",
-        "title": "Preview",
+        "title": "Preview-files",
         "environments": ["edit"],
         "transform": {
           "url": "($url) => `${$url}?foo=bar`"
         }
       },
       {
-        "id": "tools",
-        "containerId" : "bulk-status",
+        "id" : "bulk-status",
         "badgeVariant": "celery",
         "title" : "Bulk status",
         "environments" : [ "dev", "edit", "preview" ],
