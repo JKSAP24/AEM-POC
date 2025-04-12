@@ -14,6 +14,35 @@ import {
   sampleRUM,
 } from './aem.js';
 
+
+
+async function initSidekick() {
+  
+  const sk = document.querySelector('helix-sidekick') || document.querySelector('aem-sidekick');
+  if (sk) {
+    sk.addEventListener('previewed', (a,b,c) => {
+      console.log(a,b,c)
+    });
+    sk.addEventListener('published', (a,b,c) => {
+      console.log(a,b,c)
+    });
+   } else {
+    document.addEventListener(
+      'sidekick-ready',
+      () => {
+        const oAddedSidekick = document.querySelector('helix-sidekick') || document.querySelector('aem-sidekick');
+        oAddedSidekick.addEventListener('previewed', (a,b,c) => {
+          console.log(a,b,c)
+        });
+        oAddedSidekick.addEventListener('published', (a,b,c) => {
+          console.log(a,b,c)
+        });
+      },
+      { once: true },
+    );
+  }
+}
+
 /**
  * Builds hero block and prepends to main in a new section.
  * @param {Element} main The container element
