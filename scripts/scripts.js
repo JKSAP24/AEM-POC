@@ -20,6 +20,7 @@ async function initSidekick() {
   
   const sk = document.querySelector('helix-sidekick') || document.querySelector('aem-sidekick');
   if (sk) {
+    debugger;
     sk.addEventListener('previewed', (a,b,c) => {
       console.log(a,b,c)
     });
@@ -30,6 +31,7 @@ async function initSidekick() {
     document.addEventListener(
       'sidekick-ready',
       () => {
+        debugger;
         const oAddedSidekick = document.querySelector('helix-sidekick') || document.querySelector('aem-sidekick');
         oAddedSidekick.addEventListener('previewed', (a,b,c) => {
           console.log(a,b,c)
