@@ -3,13 +3,6 @@
   "passConfig": true,
   "plugins": [
     {
-      "id": "custom-preview",
-      "title": "Preview with Params",
-      "url": "https://main--aem-poc--jksap24.hlx.page",
-      "passConfig": true,
-      "environments": ["edit"]
-    },
-    {
       "id": "bulk-status",
       "badgeVariant": "celery",
       "title": "Bulk status",
