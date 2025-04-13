@@ -93,6 +93,7 @@
           console.log("Detected Google Drive");
 
           const rows = document.querySelectorAll('[role="row"][aria-selected="true"]');
+          console.log(rows);
           const fileNames = Array.from(rows).map(row => {
             const nameEl = row.querySelector('[data-tooltip]');
             const fallbackEl = row.querySelector('div[role="gridcell"] span[aria-label]');
