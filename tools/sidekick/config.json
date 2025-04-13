@@ -12,5 +12,5 @@
     }
   ],
   "previewHost": "main--aem-poc--jksap24.hlx.page",
-  "liveHost": "main--aem-poc--jksap24.hlx.live#src=sd"
+  "liveHost": "main--aem-poc--jksap24.hlx.live"
 }
