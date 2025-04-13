@@ -11,6 +11,6 @@
       "paletteRect": "top: 50px; bottom: 10px; right: 10px; left: auto; width:400px; height: calc(100vh - 60px)"
     }
   ],
-  "previewHost": "main--aem-poc--jksap24.hlx.page?s=sd",
+  "previewHost": "main--aem-poc--jksap24.hlx.page{{pathname}}?s=sd",
   "liveHost": "main--aem-poc--jksap24.hlx.live"
 }
