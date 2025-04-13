@@ -12,7 +12,5 @@
     }
   ],
   "previewHost": "main--aem-poc--jksap24.hlx.page#src=sd",
-  "liveHost": "main--aem-poc--jksap24.hlx.live#src=sd",
-  "urlPreview": "main--aem-poc--jksap24.hlx.page#src=sd",
-  "urlLive": "main--aem-poc--jksap24.hlx.live#src=sd"
+  "liveHost": "main--aem-poc--jksap24.hlx.live#src=sd"
 }
